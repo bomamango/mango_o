@@ -1,18 +1,27 @@
-<html>
-    <head>
-        <title>Mboa blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="">Mboa Blog</a></h1>
-        </div>
-        {% for post in posts %}
-            <div>
-                <p>Published: {{ post.published_date }}</p>
-                <h1><a href="">{{post.title }}</a></h1>
-                <p>{{ post.text|linebreaksbr }}</p>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                <p>published: {{ post.published_date }}</p>
             </div>
-        {% endfor %}
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-    </body>
-</html>
+    {% endfor %}
+
+<div>
+    <h1><a href="">Mboa Blog</a></h1>
+</div>
+<div>
+    <p>published: 05.09.2016, 12:14</p>
+    <h2><a href="">Blog yada</a></h2>
+    <p>Ndi la'h?. Ndi ke'h boma'h? Vous voulez entendre que vous bloger, bloger donc on voit! N'est-ce pas vous voulez entrer dans l'economie numerique? Entrez alors on voit! Check this out in a few, later gator...After a while crocodile...</p>
+</div>
+<div>
+    <p>published: 05.09.2016, 12:14</p>
+    <h2><a href="">Ntila bi ba'h</a></h2>
+    <p>Je causais avec mon gardien qui n'etait pas a son poste Dimanche dernier.  Il voulait me convaincre qu'il etait la, que je n'ai pas bien regarder.  C'est grave ca, le poisson glisse tjrs dans l'eau.</p>
+</div>
+{% endblock %}
