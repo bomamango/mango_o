@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Mboa blog</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="">Mboa Blog</a></h1>
+        </div>
+        {% for post in posts %}
+            <div>
+                <p>Published: {{ post.published_date }}</p>
+                <h1><a href="">{{post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+        </div>
+    </body>
+</html>

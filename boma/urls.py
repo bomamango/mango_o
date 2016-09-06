@@ -17,6 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^mango_o/', include('mango_o.urls')),
+    url(r'', include('mango_o.urls')),
+    url(r'^blog/', include('blog.urls')),
     url(r'^admin/', admin.site.urls),
 ]
